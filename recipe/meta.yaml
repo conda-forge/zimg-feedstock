@@ -20,7 +20,6 @@ requirements:
     - {{ compiler('cxx') }}  # [unix]
     - automake  # [unix]
     - libtool  # [unix]
-    - vs2019_win-64  # [win]
     - autotools_clang_conda  # [win]
     - make
 
