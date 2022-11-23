@@ -21,7 +21,7 @@ requirements:
     - automake  # [unix]
     - libtool  # [unix]
     - autotools_clang_conda  # [win]
-    - make
+    - make  # [unix]
 
 test:
   commands:
