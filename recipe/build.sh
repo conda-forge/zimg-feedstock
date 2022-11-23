@@ -7,5 +7,5 @@ if [[ "$target_platform" == "win-64" ]]
 then
   patch_libtool
 fi
-make
+make -j${CPU_COUNT}
 make install
