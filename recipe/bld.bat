@@ -7,6 +7,7 @@ rem The outputs are renamed to be the same as autotools output
 mv %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
 mv %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
 del %OUTPUT_DIR%\z.lib
+del %OUTPUT_DIR%\z.pdb
 del %OUTPUT_DIR%\z_imp.exp
 
 rem Future releases might add targets and they should be properly handled
@@ -15,6 +16,3 @@ if %ERRORLEVEL% neq 0 exit 1
 
 mv %SRC_DIR%\src\zimg\api\zimg.h %LIBRARY_INC%\zimg.h
 mv %SRC_DIR%\src\zimg\api\zimg++.hpp %LIBRARY_INC%\zimg++.hpp
-
-mkdir %LIBRARY_LIB%\pkgconfig
-mv %SRC_DIR%\zimg.pc %LIBRARY_LIB%\pkgconfig
