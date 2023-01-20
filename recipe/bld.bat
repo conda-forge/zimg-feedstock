@@ -3,6 +3,10 @@ if %ERRORLEVEL% neq 0 exit 1
 
 set OUTPUT_DIR=x64\Release
 
+mkdir %LIBRARY_BIN%
+mkdir %LIBRARY_INC%
+mkdir %LIBRARY_LIB%\pkgconfig
+
 rem The outputs are renamed to be the same as autotools output
 copy %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
 copy %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
@@ -18,5 +22,4 @@ xcopy /E %SRC_DIR%\doc %LIBRARY_PREFIX%\share\doc\zimg
 copy %SRC_DIR%\src\zimg\api\zimg.h %LIBRARY_INC%\zimg.h
 copy %SRC_DIR%\src\zimg\api\zimg++.hpp %LIBRARY_INC%\zimg++.hpp
 
-mkdir %LIBRARY_LIB%\pkgconfig
 copy %SRC_DIR%\zimg.pc %LIBRARY_LIB%\pkgconfig
