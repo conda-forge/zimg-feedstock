@@ -1,2 +1,18 @@
-call %BUILD_PREFIX%\Library\bin\run_autotools_clang_conda_build.bat
+MSBuild.exe _msvc\zimg.sln /t:dll /p:Configuration=Release
 if %ERRORLEVEL% neq 0 exit 1
+
+set OUTPUT_DIR=_msvc\x64\Release
+
+rem The outputs are renamed to be the same as autotools output
+mv %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
+mv %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
+del %OUTPUT_DIR%\z.lib
+del %OUTPUT_DIR%\z.pdb
+del %OUTPUT_DIR%\z_imp.exp
+
+rem Future releases might add targets and they should be properly handled
+rmdir %OUTPUT_DIR%
+if %ERRORLEVEL% neq 0 exit 1
+
+mv %SRC_DIR%\src\zimg\api\zimg.h %LIBRARY_INC%\zimg.h
+mv %SRC_DIR%\src\zimg\api\zimg++.hpp %LIBRARY_INC%\zimg++.hpp
