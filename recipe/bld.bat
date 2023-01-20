@@ -1,10 +1,11 @@
-MSBuild.exe _msvc\zimg.sln /t:dll /p:Configuration=Release /p:OutputDir="build\"
+MSBuild.exe _msvc\zimg.sln /t:dll /p:Configuration=Release
 if %ERRORLEVEL% neq 0 exit 1
 
-copy build\z.dll %LIBRARY_BIN%\zimg.dll
-copy build\z_imp.lib %LIBRARY_LIB%\zimg.lib
-del build\z.lib
-del build\z_imp.exp
+set OUTPUT_DIR=x64\Release
+copy %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
+copy %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
+del %OUTPUT_DIR%\z.lib
+del %OUTPUT_DIR%\z_imp.exp
 
 rem Future releases might add targets and they should be properly handled
 rmdir build
