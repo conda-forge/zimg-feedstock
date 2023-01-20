@@ -8,8 +8,8 @@ mkdir %LIBRARY_INC%
 mkdir %LIBRARY_LIB%\pkgconfig
 
 rem The outputs are renamed to be the same as autotools output
-copy %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
-copy %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
+mv %OUTPUT_DIR%\z.dll %LIBRARY_BIN%\zimg.dll
+mv %OUTPUT_DIR%\z_imp.lib %LIBRARY_LIB%\zimg.lib
 del %OUTPUT_DIR%\z.lib
 del %OUTPUT_DIR%\z_imp.exp
 
