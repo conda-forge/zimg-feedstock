@@ -1,0 +1,10 @@
+diff --git a/_msvc/zimg.def b/_msvc/zimg.def
+index e1b9443..1aef9bc 100644
+--- a/_msvc/zimg.def
++++ b/_msvc/zimg.def
+@@ -1,4 +1,4 @@
+-LIBRARY z
++LIBRARY zimg
+ EXPORTS
+ 	zimg_get_version_info
+ 	zimg_get_api_version
