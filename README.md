@@ -1,11 +1,11 @@
-About zimg
-==========
+About zimg-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zimg-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/sekrit-twc/zimg
 
 Package license: WTFPL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zimg-feedstock/blob/main/LICENSE.txt)
 
 Summary: Scaling, colorspace conversion, and dithering library
 
